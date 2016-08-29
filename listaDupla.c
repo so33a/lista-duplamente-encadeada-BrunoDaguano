@@ -26,13 +26,14 @@ ListaDupla inicializa() {
   return aux;
 }
 
+
 void insereDepois (ListaDupla l, link x, link t) {
   if (x == NULL) {
     l->head = t;
     t->next = l->z;
     t->prev = l->z;
     l->z->prev = t;
-    l->z->next = t; 
+    l->z->next = t;
   } else {
     t->next = x->next;
     t->prev = x;
@@ -91,3 +92,13 @@ void destroiLista(ListaDupla l) {
   free(l);
 }
 
+MenorNo(ListaDupla 1, int item){
+ link t = l->head;
+  while ( t != l->z ) {
+    if(t > t->next)
+      return t;
+    else
+      return t = t->next;
+  }
+  return t->item;
+}
