@@ -16,6 +16,10 @@ int main () {
   printf ("\nremovendo %d \n", aux2->item);
   if((aux2 = buscar(l, 21) ) != NULL) 
     removeNo(aux2);
+  link menor = MenorNo(l);
+  printf("Menor no: %d\n", menor->item);
+  imprime(l);
+  Ordena(l);
   imprime(l);
   destroiLista(l);
 
