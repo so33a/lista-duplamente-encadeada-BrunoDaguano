@@ -92,13 +92,25 @@ void destroiLista(ListaDupla l) {
   free(l);
 }
 
-MenorNo(ListaDupla 1, int item){
+link MenorNo(ListaDupla l){
  link t = l->head;
+ link menor = t;
   while ( t != l->z ) {
-    if(t > t->next)
-      return t;
-    else
-      return t = t->next;
+    if(menor->item > t->item){
+      menor = t;
+    }
+    t = t->next;
   }
-  return t->item;
+  return menor;
+}
+
+void Ordena(ListaDupla l){
+  ListaDupla aux;
+  aux = inicializa();
+  link t = l->head;
+  while(t != l->z){
+    insereDepois(aux, aux->z->next, removeNo(MenorNo(l)));
+    t = t->next;
+  }
+  l = aux;
 }
